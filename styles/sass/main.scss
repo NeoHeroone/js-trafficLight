@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #333;
+  margin: 0;
+  flex-direction: column;
+  .traffic-light {
+    width: 80px;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  
+    .light {
+        width: 60px;
+        height: 60px;
+        margin: 10px auto;
+        border-radius: 50%;
+        background-color: #333;
+        opacity: 0.2;
+  
+        &.red.active {
+            background-color: red;
+            opacity: 1;
+        }
+  
+        &.yellow.active {
+            background-color: yellow;
+            opacity: 1;
+        }
+  
+        &.green.active {
+            background-color: green;
+            opacity: 1;
+        }
+    }
+  }
+  .road {
+    width: 100vw;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    background-color: #444;
+  
+    .car {
+        width: 80px;
+        height: 40px;
+        position: absolute;
+        bottom: 10px;
+        background-color: blue;
+        border-radius: 10px;
+        transition: transform 1s ease-in-out;
+  
+        &.car1 {
+            left: -80px;  // Yo'lning chap tomonidan chiqib keladi
+            background-color: red;
+        }
+  
+        &.car2 {
+            right: -80px; // Yo'lning o'ng tomonidan chiqib keladi
+            background-color: yellow;
+        }
+  
+        &.move-right {
+            transform: translateX(110vw); // Harakat yo'nalishini to'ldirish uchun biroz kattaroq o'lchamda belgilandi
+        }
+    }
+  }
+}
